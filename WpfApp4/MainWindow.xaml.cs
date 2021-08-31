@@ -55,6 +55,7 @@ namespace WpfApp4
 
     
             movieImage.Source = SingleData.Poster;
+            movieImage2.Source = SingleData.Poster;
             Minute = SingleData.Runtime;
             Description = SingleData.Genre;
 
