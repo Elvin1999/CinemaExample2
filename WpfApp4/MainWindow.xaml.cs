@@ -58,8 +58,18 @@ namespace WpfApp4
             movieImage2.Source = SingleData.Poster;
             Minute = SingleData.Runtime;
             Description = SingleData.Genre;
-
             movieLabel.Content = Minute +"  "+ Description;
+
+            response = httpClient.GetAsync($@"http://www.omdbapi.com/?apikey=ddee1dae&t={Data.Search[1].Title}&plot=full").Result;
+
+            str = response.Content.ReadAsStringAsync().Result;
+            SingleData = JsonConvert.DeserializeObject(str);
+            movieImage22.Source = SingleData.Poster;
+            movieImage21.Source = SingleData.Poster;
+            Minute = SingleData.Runtime;
+            Description = SingleData.Genre;
+            movieLabel2.Content = Minute + "  " + Description;
+
         }
     }
 }
